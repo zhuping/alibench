@@ -16,13 +16,16 @@ if (system.args.length > 1) {
     var ms = new Date - start;
     var hasWptCookie = false;
     var cookies = page.cookies;
-    
+
     for (var i in cookies) {
       if (cookies[i].name === 'wpt_ing2') {
         hasWptCookie = true;
       }
     }
 
+    // 提交form表单后，页面会通过轮询调用`/ajax-querywpt.php`接口判断是否已完成评测，并且此时cookie`wpt_ing2`有值
+    // 当`data.status == 'complete'`时，删除cookie为`wpt_ing2`的值，并且重新reload页面
+    // 所以这里利用是否存在这个值延长截图函数的等待
     if (!hasWptCookie) {
       loadInProgress = false;
     }

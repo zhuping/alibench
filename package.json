@@ -1,0 +1,18 @@
+{
+  "name": "alibench-screenshot",
+  "version": "0.0.1",
+  "description": "post a url to alibench.com and get a screenshot",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "alibench",
+    "phantomjs"
+  ],
+  "author": "zhuping.zp",
+  "license": "MIT",
+  "dependencies": {
+    "phantomjs": "^1.9.18"
+  }
+}
